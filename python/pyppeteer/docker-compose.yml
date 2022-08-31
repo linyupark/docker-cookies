@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+
+  python:
+    build: ../
+    container_name: pyppeteer
+    stdin_open: true
+    tty: true
+    volumes:
+      - "./src:/usr/app/src"
+    environment:
+      - "CHROME_BIN=/usr/bin/chromium-browser"
+    command:
+      - /bin/bash
+      - -c
+      - |
+        apt -y update
+        apt -y install chromium
+        python

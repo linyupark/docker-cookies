@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+  python:
+    build: ../
+    container_name: fastapi
+    stdin_open: true
+    tty: true
+    ports:
+      - "8080:8080"
+    volumes:
+      - "./src:/usr/app/src"
+    command: "uvicorn src.main:app --host 0.0.0.0 --port 8080 --reload"

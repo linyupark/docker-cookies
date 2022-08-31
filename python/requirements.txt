@@ -1,0 +1,14 @@
+### 取消注释启用对应依赖
+
+### fastapi
+# fastapi
+# pydantic
+# uvicorn
+
+### scrapy-splash
+# Scrapy
+# scrapy-splash
+
+### pyppeteer
+# pyppeteer
+# pyppeteer_stealth

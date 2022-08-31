@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+
+  nodejs:
+    image: "node:16-alpine"
+    working_dir: "/usr/app"
+    container_name: app
+    stdin_open: true
+    tty: true
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./app:/usr/app"
+    command: "node"
+
+  web:
+    image: "nginx"
+    restart: "unless-stopped"
+    container_name: "nginx"
+    ports:
+      - "80:80"
+    volumes:
+      - "./web/etc:/etc/nginx"
+      - "./web/log:/var/log/nginx"
+      - "./web/root:/usr/share/nginx"
+
+    

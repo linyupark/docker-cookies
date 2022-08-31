@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+
+  splash:
+    image: scrapinghub/splash
+    ports:
+      - "8050:8050"
+    command: "--max-timeout 600"
+
+  python:
+    build: ../
+    container_name: scrapy
+    stdin_open: true
+    tty: true
+    volumes:
+      - "./src:/usr/app/src"
+    depends_on:
+      - splash
+    environment:
+      - "SPLASH_URL=http://splash:8050"
+    command: "python"
