@@ -13,16 +13,3 @@ services:
     volumes:
       - "./app:/usr/app"
     command: "node"
-
-  web:
-    image: "nginx"
-    restart: "unless-stopped"
-    container_name: "nginx"
-    ports:
-      - "80:80"
-    volumes:
-      - "./web/etc:/etc/nginx"
-      - "./web/log:/var/log/nginx"
-      - "./web/root:/usr/share/nginx"
-
-    
