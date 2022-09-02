@@ -2,14 +2,14 @@ version: '3'
 
 services:
 
-  nodejs:
-    image: "node:16-alpine"
+  bun:
+    image: jarredsumner/bun:edge
     working_dir: "/usr/app"
-    container_name: node-app
+    container_name: bun-app
     stdin_open: true
     tty: true
     ports:
-      - "3000:3000"
+      - "8080:8080"
     volumes:
       - "./app:/usr/app"
-    command: "node"
+    command: sh

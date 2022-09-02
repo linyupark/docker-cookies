@@ -5,7 +5,7 @@ services:
   deno:
     image: "denoland/deno"
     working_dir: "/usr/app"
-    container_name: app
+    container_name: deno-app
     stdin_open: true
     tty: true
     ports:
