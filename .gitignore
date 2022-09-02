@@ -1,2 +1,4 @@
 nginx/setting/log/access.log
 nginx/setting/log/error.log
+**/db/*
+**/admin/*
