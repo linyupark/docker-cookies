@@ -1,0 +1,1 @@
+acme.sh --install-cert -d "*.directloan.ph" --key-file "/root/.acme.sh/*.directloan.ph/*.directloan.ph.key" --fullchain-file "/root/.acme.sh/*.directloan.ph/fullchain.cer" --reloadcmd "service nginx reload"
