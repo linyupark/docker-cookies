@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+
+  deno:
+    image: "denoland/deno"
+    working_dir: "/usr/app"
+    container_name: app
+    stdin_open: true
+    tty: true
+    ports:
+      - "8080:8080"
+    volumes:
+      - "./app:/usr/app"
+    command: 
+      - /bin/bash
+      - -c
+      - |
+        deno cache deps.ts
+        deno cache main.ts
+        mkdir -p /var/tmp/log
+        deno run --allow-all main.ts
